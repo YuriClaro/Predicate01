@@ -3,9 +3,9 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Predicate;
 
 import entities.Product;
-import util.PredicateProduct;
 
 public class Program {
 
@@ -28,8 +28,12 @@ public class Program {
 		//list.removeIf(p -> p.getPrice() >= 100.00);
 		
 		// Utilizando a Interface Funcional
-		list.removeIf(new PredicateProduct());	
+		//list.removeIf(new PredicateProduct());	
 
+		// Utilizando uma expressão Lambda declarada
+		Predicate<Product> pred = p -> p.getPrice() >= 100.00;
+		list.removeIf(pred);
+		
 		// lendo todos os produtos e mandando imprimir na tela
 		for (Product p : list) {
 			System.out.println(p);
