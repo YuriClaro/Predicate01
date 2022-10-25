@@ -31,8 +31,11 @@ public class Program {
 		//list.removeIf(new PredicateProduct());	
 
 		// Utilizando uma expressão Lambda declarada
-		Predicate<Product> pred = p -> p.getPrice() >= 100.00;
-		list.removeIf(pred);
+		//Predicate<Product> pred = p -> p.getPrice() >= 100.00;
+		//list.removeIf(pred);
+		
+		// Utilizando a expressão Lambda expressiva
+		list.removeIf(p -> p.getPrice() >= 100.00);
 		
 		// lendo todos os produtos e mandando imprimir na tela
 		for (Product p : list) {
